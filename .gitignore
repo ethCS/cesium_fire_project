@@ -10,6 +10,8 @@ Content/
 
 *.vdb
 *.ndjson
+Content.zip
+FireData.zip
 
 # Generated files
 *.sln
