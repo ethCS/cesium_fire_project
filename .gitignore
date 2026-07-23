@@ -11,6 +11,7 @@ Content/
 *.vdb
 *.ndjson
 Content.zip
+Content.zip.part*
 FireData.zip
 
 # Generated files

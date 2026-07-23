@@ -41,7 +41,29 @@ Alternatively, double-click `firesimulation2.uproject` — UE will prompt to com
 2. In the **Cesium panel** (Window → Cesium), paste your ion access token
 3. The token is saved locally in `Content/CesiumSettings/` which is git-ignored — it will not be committed
 
-### 4. Set Up Fire Data
+### 4. Install Required Packaged Assets (Content + FireData)
+
+Because `Content.zip` is larger than GitHub's 2GB git-pack limit, project assets are distributed through a GitHub Release instead of normal git history.
+
+```powershell
+.\Tools\install_project_assets.ps1
+```
+
+This installs:
+- `Content/` (maps, materials, Niagara assets, etc.)
+- `FireData/` (prebuilt generated data)
+
+If you only need one archive:
+
+```powershell
+# Content only
+.\Tools\install_project_assets.ps1 -SkipFireData
+
+# FireData only
+.\Tools\install_project_assets.ps1 -SkipContent
+```
+
+### 5. Set Up / Regenerate Fire Data (optional)
 
 The `FireData/Generated/` folder holds runtime data consumed by the engine. It is **not tracked in git** — you must generate it before running.
 
@@ -76,7 +98,7 @@ FireData/Generated/
   geometry/<year>.ndjson  (one file per year fetched)
 ```
 
-### 5. Configure Data Paths (if needed)
+### 6. Configure Data Paths (if needed)
 
 Data paths and coordinate origin are set in **Project Settings → Project → Fire Simulation Data**.
 
@@ -95,7 +117,9 @@ If fires appear in the wrong location on the globe, check these transform values
 
 The `Content/` folder is **not tracked in git** (binary `.uasset`/`.umap` files). This includes the main level (`FireMain`), Niagara fire effects, and material assets.
 
-If you are a collaborator who needs the content, contact the project owner to receive the content files, then place them in the `Content/` directory of the cloned project.
+Install packaged assets directly from the project release:
+
+`https://github.com/ethCS/cesium_fire_project/releases/tag/project-assets-v1`
 
 ---
 
