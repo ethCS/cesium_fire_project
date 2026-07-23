@@ -1,0 +1,31 @@
+Binaries/
+DerivedDataCache/
+Intermediate/
+Saved/
+
+FireData/Generated/
+
+# UE binary assets - not tracked in git
+Content/
+
+*.vdb
+*.ndjson
+
+# Generated files
+*.sln
+.vsconfig
+
+# AI/MCP tooling
+.agents/
+.claude/
+.mcp.json
+Plugins/McpAutomationBridge/
+
+# Cache files
+cesium-request-cache.sqlite
+cesium-request-cache.sqlite-shm
+cesium-request-cache.sqlite-wal
+
+.vs/
+*.suo
+*.user
