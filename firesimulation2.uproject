@@ -35,7 +35,5 @@
 			]
 		}
 	],
-	"AdditionalPluginDirectories": [
-		"Plugins"
-	]
+	"AdditionalPluginDirectories": []
 }
